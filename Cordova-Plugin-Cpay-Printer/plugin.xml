@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+	    xmlns:android="http://schemas.android.com/apk/res/android" 
+	    id="id.CpayPrinter" 
+	    version="1.0.1" >
+    <name>Cordova-Plugin-Cpay-Printer</name>
+    <description>A cordova plugin for cpay printer for android platform, which support printing .</description>
+    <repo>https://github.com/vincent19921017wang/miumiuPrinter</repo>
+    <license>Apache 2.0</license>
+    <keywords>cordova, printer, text</keywords>
+    <author>Vincent Wang</author>
+
+     <!-- cordova -->
+   <engines>
+      <engine name="cordova" version=">=3.0.0" />
+   </engines>
+
+   <js-module name="Cordova-Plugin-Cpay-Printer" src="www/Cordova-Plugin-Cpay-Printer.js">
+      <clobbers target="cordova.plugins.Cordova-Plugin-Cpay-Printer" />
+   </js-module>
+
+    <!-- android -->
+   <platform name="android">
+      <config-file target="res/xml/config.xml" parent="/*">
+         <feature name="CentermHelper">
+            <param name="android-package" value="com.centerm.cordovahelper.CentermHelper"/>
+         </feature>
+      </config-file>
+
+      <config-file target="AndroidManifest.xml" parent="/*">
+        <uses-permission android:name="android.permission.BLUETOOTH" />
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+        <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+        <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+        <uses-permission android:name="android.permission.WAKE_LOCK" />
+        <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+  		<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    	<uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    	<uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    	<uses-permission android:name="android.permission.CAMERA" />
+   		<uses-permission android:name="android.permission.FLASHLIGHT"/>
+    	<uses-permission android:name="android.permission.GET_TASKS" />
+    	<uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+   		<!-- 密码键盘权限 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_PINPAD_MODULE"/>
+    	<!-- 刷卡设备权限 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_SWIPE_MODULE"/>
+    	<!-- POBC权限 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_PBOC_MODULE"/>
+    	<!-- 新PBOC权限 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_NEW_PBOC_MODULE"/>
+    	<!-- IC卡设备权限 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_IC_MODULE"/>
+    	<!-- 非接卡设备权限 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_RF_MODULE"/>
+    	<!-- 打印机权限 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_PRINTER_MODULE"/>
+    	<!-- 系统设备权限 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_SYSTEM_MODULE"/>
+    	<!-- 钱箱设备权限 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_CASHBOX_MODULE"/>
+    	<!-- 客显设备权限 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_CUSTOMER_DISPLAY_MODULE"/>
+    	<!-- M1卡设备权限 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_M1_MODULE"/>
+    	<!-- MODEM设备权限 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_MODEM_MODULE"/>
+    	<!-- PSAM卡设备权限 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_PSAM_MODULE"/>
+    	<!-- 串口设备权限 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_SERIAL_PORT_MODULE"/>
+    	<!-- 辅屏设备权限 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_OLED_MODULE"/>
+    	<!-- 身份证设备权限 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_ID_MODULE"/>
+    	<!-- LCD设备权限 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_LCD_MODULE"/>
+    	<!-- 安全模块权限 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_SAFE_MODULE"/>
+    	<!-- MEM4442卡设备权限 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_MEM4442_MODULE"/>
+    	<!-- MEM102卡设备权限 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_MEM102_MODULE"/>
+    	<!-- MEM1608卡设备权限 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_MEM1608_MODULE"/>
+    	<!-- MEMAT24C02卡设备权限 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_MEMAT24C02_MODULE"/>
+    	<!-- 版本获取权限 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_VERSION_MODULE"/>
+    	<!-- 语音播报 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_VOICE_MODULE"/>
+    	<!-- 静默安装应用接口权限 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_SILENT_INSTALL"/>
+    	<!-- 静默卸载应用接口权限 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_SILENT_UNINSTALL"/>
+    	<!-- 扫码权限 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_QUICK_SCAN"/>
+   	 	<!-- MEM4428卡设备权限 -->
+    	<uses-permission android:name="android.permission.CPAYSDK_MEM4428_MODULE"/>
+
+      </config-file>
+
+      	<source-file src="src/android/CentermHelper.java" target-dir="src/com/centerm/cordovahelper" />
+ 		<source-file src="src/android/libs/SmartPosLib_V3.1.2.jar" target-dir="libs"/>
+   </platform>
+</plugin>
